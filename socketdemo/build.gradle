@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.protobuf'
+//apply plugin: 'com.google.protobuf'
 
 android {
     compileSdkVersion 27
@@ -24,36 +24,36 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            java {
-                srcDir 'src/main/java'
-            }
-            proto {
-                srcDir 'src/main/proto'
-            }
-        }
-    }
+//    sourceSets {
+//        main {
+//            java {
+//                srcDir 'src/main/java'
+//            }
+//            proto {
+//                srcDir 'src/main/proto' //指定.proto文件路径
+//            }
+//        }
+//    }
+
 }
 
-protobuf {
-    //配置protoc编译器
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.5.1'
-    }
-    //这里配置生成目录，编译后会在build的目录下生成对应的java文件
-    generateProtoTasks {
-        all().each { task ->
-            task.builtins {
-                remove java
-            }
-            task.builtins {
-                java {}
-            }
-        }
-    }
-}
-
+//protobuf {
+//    protoc {
+//        artifact = 'com.google.protobuf:protoc:3.5.1' // 也可以配置本地编译器路径
+//    }
+//
+//    generateProtoTasks {
+//        all().each { task ->
+//            task.builtins {
+//                remove java
+//            }
+//            task.builtins {
+//                java {}// 生产java源码
+//            }
+//        }
+//    }
+//
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -61,7 +61,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    implementation 'com.google.protobuf:protobuf-java:3.5.1'
+//    api 'com.google.protobuf:protobuf-java:3.5.1'
 //    api 'com.google.protobuf:protoc:3.5.1'
     implementation group: 'com.google.protobuf.nano', name: 'protobuf-javanano', version: '3.1.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

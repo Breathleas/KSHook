@@ -18,7 +18,7 @@ public class CommentFeed extends MessageNano {
     public String deviceHash;
 
     /* renamed from: id */
-    public String id;
+    public String f47452id;
     public boolean isKoi;
     public String landscapeFontColor;
     public int liveAssistantType;
@@ -32,7 +32,7 @@ public class CommentFeed extends MessageNano {
         clear();
     }
     public CommentFeed clear() {
-        this.id = "";
+        this.f47452id = "";
         this.user = null;
         this.time = 0;
         this.content = "";
@@ -61,8 +61,8 @@ public class CommentFeed extends MessageNano {
 
     public int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.id.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.id);
+        if (!this.f47452id.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f47452id);
         }
         User kVar = this.user;
         if (kVar != null) {
@@ -134,7 +134,7 @@ public class CommentFeed extends MessageNano {
                 case 0:
                     return this;
                 case 10:
-                    this.id = codedInputByteBufferNano.readString();
+                    this.f47452id = codedInputByteBufferNano.readString();
                     break;
                 case 18:
                     if (this.user == null) {
@@ -215,8 +215,8 @@ public class CommentFeed extends MessageNano {
 
     @Override
     public void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.id.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.id);
+        if (!this.f47452id.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f47452id);
         }
         User kVar = this.user;
         if (kVar != null) {
