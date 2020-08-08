@@ -1,0 +1,29 @@
+syntax = "proto3";
+package com.example.socketdemo;
+option java_package = "com.example.socketdemo";
+
+message CSEnterRoom{
+  string token = 1;
+  int32 clientId = 2;
+  string deviceId = 3;
+  string liveStreamId = 4;
+  bool isAuthor = 5;
+  uint32 reconnectCount = 6;
+  uint32 lastErrorCode = 7;
+  string locale = 8;
+  string appVer = 9;
+  string location = 10;
+  string operator = 11;
+  bool firstEnter = 12;
+  string expTag = 13;
+  string attach = 14;
+  int32 appType = 15;
+  int32 sourceType = 16;
+  string broadcastGiftToken = 17;
+  string serviceToken = 18;
+  string redPackId = 19;
+  uint64 authorId = 20;
+  string kpn = 21;
+  string kpf = 22;
+
+}
