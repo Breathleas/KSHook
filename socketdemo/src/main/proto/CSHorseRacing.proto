@@ -1,0 +1,23 @@
+syntax = "proto3";
+package com.example.socketdemo;
+option java_package = "com.example.socketdemo";
+
+message CSHorseRacing{
+  string streamId = 1;
+  string horseTag = 2;
+  int64 clientVisitorId = 3;
+  bool isAuthor = 4;
+  string android_id = 11;
+  int32 clientId = 10;
+  string locale = 12;
+  string appVer = 13;
+  double latitude = 14;
+  double longitude = 15;
+  string operator = 16;
+  string sClientVisitorId = 17;
+
+}
+
+message SendHeartBeat{
+  uint64 time = 1;
+}

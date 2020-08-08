@@ -1,0 +1,1304 @@
+syntax = "proto3";
+package com.example.socketdemo;
+option java_package = "com.example.socketdemo";
+
+message SCFeed{
+
+  message CommentFeed{
+    string id = 1;
+    //    hook 例子
+    //                        user <
+    //D/KSHook  (10751):     a: 1857293511
+    //D/KSHook  (10751):     b: "\u9752\u6625\u600e\u9ebd\u6325\u970d\u4e36"
+    //D/KSHook  (10751):     c: "F"
+    //D/KSHook  (10751):     d: ""
+    //D/KSHook  (10751):     e <
+    //D/KSHook  (10751):       a: "ali-p1.yximgs.com"
+    //D/KSHook  (10751):       b: "http://ali-p1.yximgs.com/uhead/AB/2020/07/29/20/BMjAyMDA3MjkyMDAzMzdfMTg1NzI5MzUxMV8yX2hkMjIwXzE5OA==_s.jpg"
+    //D/KSHook  (10751):       c: ""
+    //D/KSHook  (10751):       d: ""
+    //D/KSHook  (10751):     >
+    //D/KSHook  (10751):     f: false
+    //D/KSHook  (10751):     g: ""
+    //D/KSHook  (10751):     i: ""
+    //D/KSHook  (10751):   >
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+    uint64 time = 3;
+    string content = 4;
+    uint64 sortRank = 5;
+    int32 liveAssistantType = 6;
+    string deviceHash = 7;
+    string landscapeFontColor = 8;
+    bool isKoi = 9;
+
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 10;
+
+    message CommentFeedEmotion{
+      string emotionName = 1;
+    }
+    repeated CommentFeedEmotion emotion = 11;
+  }
+  repeated CommentFeed commentFeed = 1;
+
+  message LikeFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint64 sortRank = 4;
+    int32 liveAssistantType = 5;
+    string deviceHash = 6;
+    bool isKoi = 7;
+
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 8;
+
+  }
+  repeated LikeFeed likeFeed = 2;
+
+  message WatchingFeed{
+    string id = 1;
+
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint64 sortRank = 4;
+  }
+  repeated WatchingFeed watchingFeed = 3;
+/**
+D/KSHook  (10751): gift_feeds <
+D/KSHook  (10751):   batch_size: 1
+D/KSHook  (10751):   client_timestamp: 1596093307673
+D/KSHook  (10751):   combine_stream: false
+D/KSHook  (10751):   combo_count: 1
+D/KSHook  (10751):   device_hash: "3jC+wA=="
+D/KSHook  (10751):   display_extend_millis: 0
+D/KSHook  (10751):   expire_duration: 300000
+D/KSHook  (10751):   gift_id: 164
+D/KSHook  (10751):   gift_type: 128
+D/KSHook  (10751):   id: "6c5d2196-da44-47e3-a054-b5ce817220c2"
+D/KSHook  (10751):   is_drawing_gift: false
+D/KSHook  (10751):   is_from_wheel_decide: false
+D/KSHook  (10751):   is_koi: false
+D/KSHook  (10751):   is_open_arrow_red_pack: false
+D/KSHook  (10751):   live_assistant_type: 0
+D/KSHook  (10751):   magic_face_id: 0
+D/KSHook  (10751):   merge_key: "1516475755-5799010"
+D/KSHook  (10751):   only_display_in_slot: false
+D/KSHook  (10751):   rank: 1
+D/KSHook  (10751):   sender_state <
+D/KSHook  (10751):     assistant_type: 0
+D/KSHook  (10751):     fans_group_intimacy_level: 0
+D/KSHook  (10751):     is_from_fans_top: false
+D/KSHook  (10751):     is_koi: false
+D/KSHook  (10751):     wealth_grade: 0
+D/KSHook  (10751):   >
+ */
+  message GiftFeed{
+    string id = 1;
+
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+    uint64 time = 3;
+    uint32 giftId = 4;
+    uint64 sortRank = 5;
+    string mergeKey = 6;
+    uint32 batchSize = 7;
+    uint32 comboCount = 8;
+    uint32 rank = 9;
+    uint64 expireDuration = 10;
+    uint64 clientTimestamp = 11;
+    bool isDrawingGift = 12;
+    uint64 magicFaceId = 13;
+    uint64 slotDisplayDuration = 14;
+    uint32 starLevel = 15;
+    int32 liveAssistantType = 16;
+    uint32 subStarLevel = 17;
+    int32 styleType = 18;
+    string deviceHash = 19;
+    int32 slotPos = 20;
+    uint64 displayExtendMillis = 21;
+    bool isOpenArrowRedPack = 22;
+    bool isKoi = 23;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 24;
+
+    bool isFromWheelDecide = 25;
+    uint64 giftType = 26;
+    bool combineStream = 27;
+    bool onlyDisplayInSlot = 28;
+
+  }
+  repeated GiftFeed giftFeed = 4;
+
+  uint64 watchingCount = 5;
+  uint64 likeCount = 6;
+  uint64 pendingLikeCount = 7;
+  uint64 pushInterval = 8;
+  message SystemNoticeFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    string content = 4;
+    uint64 displayDuration = 5;
+    uint64 sortRank = 6;
+    int32 displayType = 7;
+  }
+  repeated SystemNoticeFeed noticeFeed = 9;
+
+  message DrawingGiftFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint32 height = 4;
+    uint32 width = 5;
+
+    message DrawingGiftPoint{
+      uint32 giftId = 1;
+      uint32 left = 2;
+      uint32 top = 3;
+      uint32 right = 4;
+      uint32 bottom = 5;
+    }
+    repeated DrawingGiftPoint drawingGiftPoint = 6;
+    uint32 rank = 7;
+    uint64 expireDuration = 8;
+    uint64 clientTimestamp = 9;
+    uint64 slotDisplayDuration = 10;
+    int32 liveAssistantType = 11;
+    string deviceHash = 12;
+    int32 slotPos = 13;
+    uint64 displayExtendMillis = 14;
+    bool isKoi = 15;
+
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 16;
+  }
+  repeated DrawingGiftFeed drawingGiftFeed = 10;
+
+  string displayWatchingCount = 11;
+  string displayLikeCount = 12;
+
+  message GrabRedPackFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint64 sortRank = 4;
+    int32 liveAssistantType = 5;
+    int32 redPackType = 6;
+
+    message User2{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User2 user2 = 7;
+
+    uint32 getKsCoin = 8;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 9;
+
+  }
+  repeated GrabRedPackFeed grabRedPackFeed = 20;
+
+  message BroadcastGiftFeed{
+    string id = 1;
+    message FromUser{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated FromUser fromUser = 2;
+
+    message ToUser{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated ToUser toUser = 3;
+    uint64 time = 4;
+    uint32 giftId = 5;
+    uint32 batchSize = 6;
+    string fromLiveStreamId = 7;
+    uint64 sortRank = 8;
+    uint64 clientTimestamp = 9;
+    uint64 slotDisplayDuration = 10;
+    int32 style = 11;
+    int32 liveAssistantType = 12;
+    uint64 magicFaceId = 13;
+    uint64 animationDisplayTime = 14;
+    string exptag = 15;
+    string broadcastInfo = 16;
+    bool displayAnimation = 17;
+    bool displayBanner = 18;
+    bool displayGif = 19;
+    string gifUrl = 20;
+    string gifUrlNew = 21;
+    bool useStyleV2 = 22;
+    string titleV2 = 23;
+    string token = 24;
+    bool containsRedPack = 25;
+    uint32 gifFramePerSencond = 26;
+    string serverExpTag = 27;
+    uint32 rank = 28;
+  }
+  repeated BroadcastGiftFeed broadcastGiftFeed = 21;
+
+  message ShareFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint32 thirdPartyPlatform = 4;
+    uint64 sortRank = 5;
+    int32 liveAssistantType = 6;
+    string deviceHash = 7;
+    bool isKoi = 8;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 9;
+  }
+  repeated ShareFeed shareFeed = 22;
+
+  message ComboCommentFeed{
+    string id = 1;
+    string content = 2;
+    uint32 comboCount = 3;
+    uint64 time =4;
+  }
+  repeated ComboCommentFeed comboCommentFeed = 23;
+
+  message LiveStreamRichTextFeed{
+    string id = 1;
+    uint64 sortRank = 2;
+    uint64 time = 3;
+    uint32 type = 4;
+    message RichTextSegment{
+      message UserInfoSegment{
+        message User{
+          uint64 id = 1;
+          string name = 2;
+          string type = 3;
+          string d = 4;
+
+          message Info{
+            //域名
+            string domain = 1;
+            //图片url
+            string url = 2;
+            string url2 = 3;
+            string d = 4;
+          }
+          repeated Info e = 5;
+
+          bool f = 6;
+          string g = 7;
+
+          repeated Info h = 8;
+          string KsID = 9;
+        }
+        repeated User user = 1;
+        string color = 2;
+      }
+      repeated UserInfoSegment userInfoSegment = 1;
+
+      message PlainSegment{
+        string text = 1;
+        string color = 2;
+      }
+      repeated PlainSegment plainSegment = 2;
+
+      message ImageSegment{
+        message ImageUrls{
+          string a = 1;
+          string b = 2;
+          string c = 3;
+          string d = 4;
+        }
+        repeated ImageUrls imageUrls = 1;
+        string alternativeText = 2;
+        string alternativeColor = 3;
+
+      }
+      repeated ImageSegment imageSegment = 3;
+
+    }
+    repeated RichTextSegment richTextSegment = 5;
+  }
+  repeated LiveStreamRichTextFeed liveStreamRichTextFeed = 24;
+
+  uint64 authorId = 25;
+
+  message VoiceCommentFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint64 sortRank = 4;
+    int32 liveAssistantType = 5;
+    string deviceHash = 6;
+    uint64 durationMillis = 7;
+    bool isKoi = 8;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 9;
+  }
+  repeated VoiceCommentFeed voiceCommentFeed = 26;
+
+  message FollowAuthorFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint64 sortRank = 4;
+    int32 liveAssistantType = 5;
+    bool isKoi = 6;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 7;
+  }
+  repeated FollowAuthorFeed followAuthorFeed = 27;
+
+  message EnterRoomFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    uint32 source = 4;
+    uint64 sortRank = 5;
+    int32 liveAssistantType = 6;
+    string deviceHash = 7;
+    bool isKoi = 8;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 9;
+  }
+  repeated EnterRoomFeed enterRoomFeed = 28;
+  uint64 time = 29;
+
+  message PurchaseInfoFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+
+    uint64 time = 3;
+    string commodityId = 4;
+    string commodityName = 5;
+    uint32 purchaseCount = 6;
+    string orderId = 7;
+    uint64 sortRank = 8;
+    int32 liveAssistantType = 9;
+    string jumpToken = 10;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 11;
+  }
+  repeated PurchaseInfoFeed purchaseInfoFeed = 30;
+
+  message MicSeatsApplyInfoFeed{
+    string id = 1;
+    string voicePartyId = 2;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 3;
+
+    uint64 time = 4;
+  }
+  repeated MicSeatsApplyInfoFeed micSeatsApplyInfoFeed = 31;
+
+  message NormalNoticeFeed{
+    string id = 1;
+    bool onlyAuthorShow = 2;
+    message LiveStreamRichTextFeed{
+      string id = 1;
+      uint64 sortRank = 2;
+      uint64 time = 3;
+      uint32 type = 4;
+      message RichTextSegment{
+        message UserInfoSegment{
+          message User{
+            uint64 id = 1;
+            string name = 2;
+            string type = 3;
+            string d = 4;
+
+            message Info{
+              //域名
+              string domain = 1;
+              //图片url
+              string url = 2;
+              string url2 = 3;
+              string d = 4;
+            }
+            repeated Info e = 5;
+
+            bool f = 6;
+            string g = 7;
+
+            repeated Info h = 8;
+            string KsID = 9;
+          }
+          repeated User user = 1;
+          string color = 2;
+        }
+        repeated UserInfoSegment userInfoSegment = 1;
+
+        message PlainSegment{
+          string text = 1;
+          string color = 2;
+        }
+        repeated PlainSegment plainSegment = 2;
+
+        message ImageSegment{
+          message ImageUrls{
+            string a = 1;
+            string b = 2;
+            string c = 3;
+            string d = 4;
+          }
+          repeated ImageUrls imageUrls = 1;
+          string alternativeText = 2;
+          string alternativeColor = 3;
+
+        }
+        repeated ImageSegment imageSegment = 3;
+
+      }
+      repeated RichTextSegment richTextSegment = 5;
+    }
+    repeated LiveStreamRichTextFeed liveStreamRichTextFeed = 3;
+    uint64 displayDuration = 4;
+    uint64 nextDisplayGap = 5;
+  }
+  repeated NormalNoticeFeed normalNoticeFeed = 32;
+
+  message ToAudienceGiftFeed{
+    string id = 1;
+    message FromUser{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated FromUser fromUser = 2;
+
+    message ToUser{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated ToUser toUser = 3;
+    uint64 time = 4;
+    uint32 giftId = 5;
+    uint32 batchSize = 6;
+    uint64 sortRank = 7;
+    string deviceHash = 8;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 9;
+    uint32 rank = 10;
+    string mergeKey = 11;
+    uint32 comboCount = 12;
+    uint64 expireDuration = 13;
+    uint64 clientTimestamp = 14;
+    uint64 magicFaceId = 15;
+    uint64 slotDisplayDuration = 16;
+    int32 styleType = 17;
+    uint64 displayExtendMillis = 18;
+    uint32 starLevel = 19;
+    int32 slotPos = 20;
+  }
+  repeated ToAudienceGiftFeed toAudienceGiftFeed = 33;
+
+  message LiveChatUserApplyInfoFeed{
+    string id = 1;
+    message User{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated User user = 2;
+    uint64 sortRank = 3;
+
+  }
+  repeated LiveChatUserApplyInfoFeed liveChatUserApplyInfoFeed = 34;
+
+  message ToAudienceDrawingGiftFeed{
+    string id = 1;
+    message FromUser{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated FromUser fromUser = 2;
+
+    message ToUser{
+      uint64 id = 1;
+      string name = 2;
+      string type = 3;
+      string d = 4;
+
+      message Info{
+        //域名
+        string domain = 1;
+        //图片url
+        string url = 2;
+        string url2 = 3;
+        string d = 4;
+      }
+      repeated Info e = 5;
+
+      bool f = 6;
+      string g = 7;
+
+      repeated Info h = 8;
+      string KsID = 9;
+    }
+    repeated ToUser toUser = 3;
+    uint64 time = 4;
+    uint32 height = 5;
+    uint32 width = 6;
+    message DrawingGiftPoint{
+      uint32 giftId = 1;
+      uint32 left = 2;
+      uint32 top = 3;
+      uint32 right = 4;
+      uint32 bottom = 5;
+    }
+    repeated DrawingGiftPoint drawingGiftPoint = 7;
+    uint32 rank = 8;
+    uint64 expireDuration = 9;
+    uint64 clientTimestamp = 10;
+    uint64 slotDisplayDuration = 11;
+    string deviceHash = 12;
+    int32 slotPos = 13;
+    uint64 displayExtendMillis = 14;
+    message SenderState{
+      bool isFromFansTop = 1;
+      bool isKoi = 2;
+      int32 assistantType = 3;
+      uint32 fansGroupIntimacyLevel = 4;
+
+      message GzoneNameplate{
+        uint64 id = 1;
+        string name = 2;
+        message urls{
+          string url1 = 1;
+          string url2 = 2;
+          string url3 = 3;
+          string url4 = 4;
+        }
+        repeated urls url = 3;
+      }
+      repeated GzoneNameplate plate = 5;
+
+      message LiveFansGroupState{
+        uint32 intimacyLevel = 1;
+        uint32 enterRoomSpecialEffect = 2;
+      }
+      repeated LiveFansGroupState fans = 6;
+
+      uint32 wealthGrade = 7;
+    }
+    repeated SenderState senderState = 15;
+    int32 showStrategy = 16;
+  }
+  repeated ToAudienceDrawingGiftFeed toAudienceDrawingGiftFeed = 35;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
